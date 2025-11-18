@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Directory - CommunityHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom font application */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7FAFC] text-slate-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- 1. Unified Sticky, Glass-Morphism Navigation Bar -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-xl z-50 bg-white/70 backdrop-blur-lg shadow-md border border-black/5" @click.outside="mobileMenuOpen = false">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-900">CV Resource Hub</a>
+            <!-- Desktop Nav with "Reference" as active -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Home</a>
+                <a href="resources.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Resources</a>
+                <a href="stories.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Stories</a>
+                <a href="volunteer.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Get Involved</a>
+                <a href="submit.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Submit</a>
+                <a href="#" class="text-teal-500 font-bold transition-transform transform hover:-translate-y-0.5">Reference Page</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-2xl z-20">
+                <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden border-t border-gray-200" x-cloak>
+            <a href="index.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Home</a>
+            <a href="resources.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Resources</a>
+            <a href="stories.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Stories</a>
+            <a href="volunteer.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Get Involved</a>
+            <a href="submit.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Submit</a>
+            <a href="#" class="block py-3 px-6 text-lg font-bold bg-gray-100 text-teal-600">Reference Page</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="pt-36 pb-16 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900">Resource Directory</h1>
+                <p class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">Find exactly what you need with our comprehensive search and filtering tools.</p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="container mx-auto px-6 pb-24">
+            <div class="flex flex-col lg:flex-row gap-12">
+
+                <!-- 3. Improved Filters Sidebar -->
+                <aside class="w-full lg:w-1/4">
+                    <div class="sticky top-28 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="text-xl font-bold mb-6">Filters</h3>
+                        
+                        <!-- Improved Search Bar -->
+                        <div class="mb-6">
+                            <label for="search" class="block font-bold text-slate-800 mb-2">Search by Name</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <input type="text" id="search" placeholder="e.g., Food Bank" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-teal-400 focus:border-teal-500 transition">
+                            </div>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="mb-6">
+                            <h4 class="block font-bold text-slate-800 mb-3">Category</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"> <span class="ml-2 text-slate-700">Food & Housing</span></label>
+                                <label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"> <span class="ml-2 text-slate-700">Healthcare</span></label>
+                                <label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"> <span class="ml-2 text-slate-700">Education</span></label>
+                            </div>
+                        </div>
+                        
+                        <!-- Verified Filter -->
+                        <div>
+                            <h4 class="block font-bold text-slate-800 mb-3">Status</h4>
+                             <div class="space-y-2">
+                                <label class="flex items-center"><input type="checkbox" class="h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500"> <span class="ml-2 text-slate-700">Verified Only</span></label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- 2. Detailed Resource Cards Grid -->
+                <section class="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-900 pr-2">Community Food Bank</h3>
+                                <span class="flex-shrink-0 inline-flex items-center bg-teal-100 text-teal-800 text-xs font-bold px-2.5 py-1 rounded-full">
+                                    <svg class="w-3 h-3 mr-1.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.403 5.597a.75.75 0 01.07 1.058l-7.25 8.5a.75.75 0 01-1.162.004l-3.5-4a.75.75 0 011.06-1.06l2.97 3.396 6.72-7.84a.75.75 0 011.058-.07z" clip-rule="evenodd" /></svg>
+                                    Verified
+                                </span>
+                            </div>
+                            <span class="inline-block bg-slate-100 text-slate-600 text-xs font-semibold px-2 py-1 rounded-full mb-3">Food & Housing</span>
+                            <p class="text-slate-600 mb-4">Provides nutritious food to individuals and families in need across the downtown area.</p>
+                            
+                            <div class="space-y-3 text-sm text-slate-700">
+                                <p class="flex items-center"><svg class="w-4 h-4 mr-2 text-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.223.654-.369.889-.496 1.976-1.222 2.908-2.058a14.991 14.991 0 002.342-2.657c1.025-1.556 1.636-3.033 1.636-4.481C18 5.604 14.418 2 10 2S2 5.604 2 10c0 1.448.611 2.926 1.636 4.481.657 1 1.488 1.933 2.342 2.657 1.053.94 2.223 1.772 2.908 2.058.253.146.467.27.653.369.096.053.19.1.282.14zM10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg> 123 Main St, Anytown</p>
+                                <p class="flex items-center"><svg class="w-4 h-4 mr-2 text-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg> Submitted: Nov 15, 2025</p>
+                                <a href="#" class="flex items-center text-teal-600 hover:underline"><svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.665l3-3z" /><path d="M8.603 3.799a.75.75 0 00-1.06 1.06l2.5 2.5a.75.75 0 001.138-.976 4 4 0 00-5.864-.225l-3 3a4 4 0 105.656 5.656l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a2.5 2.5 0 01-3.535-3.535l3-3a2.5 2.5 0 013.665.142z" /></svg> communityfoodbank.org</a>
+                            </div>
+                        </div>
+                        <div class="p-6 mt-auto bg-slate-50 rounded-b-xl">
+                            <button class="w-full text-center bg-slate-200 text-slate-800 font-bold py-2 px-4 rounded-lg hover:bg-slate-300 transition-colors">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <!-- (Duplicate and modify Card 1 for more resources) -->
+                     <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                        <div class="p-6">
+                             <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-900 pr-2">Free Health Clinic</h3>
+                                <span class="flex-shrink-0 inline-flex items-center bg-teal-100 text-teal-800 text-xs font-bold px-2.5 py-1 rounded-full">
+                                    <svg class="w-3 h-3 mr-1.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.403 5.597a.75.75 0 01.07 1.058l-7.25 8.5a.75.75 0 01-1.162.004l-3.5-4a.75.75 0 011.06-1.06l2.97 3.396 6.72-7.84a.75.75 0 011.058-.07z" clip-rule="evenodd" /></svg>
+                                    Verified
+                                </span>
+                            </div>
+                            <span class="inline-block bg-slate-100 text-slate-600 text-xs font-semibold px-2 py-1 rounded-full mb-3">Healthcare</span>
+                            <p class="text-slate-600 mb-4">Offers no-cost medical consultations and basic health services for uninsured residents.</p>
+                             <div class="space-y-3 text-sm text-slate-700">
+                                <p class="flex items-center"><svg class="w-4 h-4 mr-2 text-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.223.654-.369.889-.496 1.976-1.222 2.908-2.058a14.991 14.991 0 002.342-2.657c1.025-1.556 1.636-3.033 1.636-4.481C18 5.604 14.418 2 10 2S2 5.604 2 10c0 1.448.611 2.926 1.636 4.481.657 1 1.488 1.933 2.342 2.657 1.053.94 2.223 1.772 2.908 2.058.253.146.467.27.653.369.096.053.19.1.282.14zM10 12a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg> 456 Oak Ave, Anytown</p>
+                                <p class="flex items-center"><svg class="w-4 h-4 mr-2 text-slate-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" /></svg> Submitted: Oct 28, 2025</p>
+                                 <a href="#" class="flex items-center text-teal-600 hover:underline"><svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.665l3-3z" /><path d="M8.603 3.799a.75.75 0 00-1.06 1.06l2.5 2.5a.75.75 0 001.138-.976 4 4 0 00-5.864-.225l-3 3a4 4 0 105.656 5.656l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a2.5 2.5 0 01-3.535-3.535l3-3a2.5 2.5 0 013.665.142z" /></svg> anytownhealth.org</a>
+                            </div>
+                        </div>
+                         <div class="p-6 mt-auto bg-slate-50 rounded-b-xl">
+                            <button class="w-full text-center bg-slate-200 text-slate-800 font-bold py-2 px-4 rounded-lg hover:bg-slate-300 transition-colors">View Details</button>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Can't Find a Resource?</h2>
+            <p class="text-slate-300 mb-8 max-w-xl mx-auto">Help our community by submitting a resource you know and trust. It's fast and easy.</p>
+            <a href="#" class="inline-block bg-white text-teal-600 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 hover:scale-110 hover:shadow-xl">Submit a Resource</a>
+            <div class="mt-16 border-t border-slate-700 pt-8">
+                <p class="text-sm text-slate-400">&copy; 2025 CommunityHub | For the National TSA Conference 2026</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

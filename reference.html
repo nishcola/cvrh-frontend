@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Page - CommunityHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom font application */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7FAFC] text-slate-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- 1. Unified Sticky, Glass-Morphism Navigation Bar -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-xl z-50 bg-white/70 backdrop-blur-lg shadow-md border border-black/5" @click.outside="mobileMenuOpen = false">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-900">CV Resource Hub</a>
+            <!-- Desktop Nav with "Reference" as active -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Home</a>
+                <a href="resources.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Resources</a>
+                <a href="stories.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Stories</a>
+                <a href="volunteer.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Get Involved</a>
+                <a href="submit.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Submit</a>
+                <a href="#" class="text-teal-500 font-bold transition-transform transform hover:-translate-y-0.5">Reference Page</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-2xl z-20">
+                <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden border-t border-gray-200" x-cloak>
+            <a href="index.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Home</a>
+            <a href="resources.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Resources</a>
+            <a href="stories.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Stories</a>
+            <a href="volunteer.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Get Involved</a>
+            <a href="submit.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Submit</a>
+            <a href="#" class="block py-3 px-6 text-lg font-bold bg-gray-100 text-teal-600">Reference Page</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="pt-36 pb-16 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900">Reference Page</h1>
+                <p class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">This page contains documentation, citations, and official logs as required for the 2026 National TSA Conference.</p>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <section class="container mx-auto px-6 pb-24">
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-slate-200 space-y-12">
+                
+                <!-- 2. Citations Section -->
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 border-b-2 border-teal-500 pb-2">Citations</h2>
+                    <div class="prose prose-lg max-w-none mt-4 text-slate-700">
+                        <p>All textual content, branding, and design elements are original works created specifically for this project. Images used are royalty-free and sourced from Unsplash. All frameworks and libraries are open source and used under their respective licenses.</p>
+                        <ul>
+                            <li><strong>Styling:</strong> Tailwind CSS</li>
+                            <li><strong>Interactivity:</strong> Alpine.js</li>
+                            <li><strong>Fonts:</strong> "Plus Jakarta Sans" via Google Fonts</li>
+                            <li><strong>Images:</strong> Sourced from Unsplash. All images are used under the Unsplash license. Individual credits are available upon request.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Copyright Checklist Section -->
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 border-b-2 border-teal-500 pb-2">Copyright Checklist</h2>
+                    <div class="prose prose-lg max-w-none mt-4 text-slate-700">
+                        <p>A complete copyright checklist has been filled out to ensure all assets used in this project are properly licensed and credited. You can download the signed PDF document below.</p>
+                        <a href="#" class="mt-2 inline-flex items-center gap-3 bg-slate-100 hover:bg-teal-100 text-slate-800 hover:text-teal-800 font-bold py-3 px-6 rounded-lg transition-colors no-underline">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            <span>Download Copyright Checklist PDF</span>
+                            <span class="text-sm text-slate-500">(1.2 MB)</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Plan of Work Log Section -->
+                 <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 border-b-2 border-teal-500 pb-2">Plan of Work Log</h2>
+                    <div class="prose prose-lg max-w-none mt-4 text-slate-700">
+                        <p>This document contains a detailed log of our work, outlining the planning, design, development, and testing phases of this project from start to finish.</p>
+                         <a href="#" class="mt-2 inline-flex items-center gap-3 bg-slate-100 hover:bg-teal-100 text-slate-800 hover:text-teal-800 font-bold py-3 px-6 rounded-lg transition-colors no-underline">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                            <span>Download Plan of Work Log PDF</span>
+                             <span class="text-sm text-slate-500">(2.5 MB)</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Community-Powered</h2>
+            <p class="text-slate-300 mb-8 max-w-xl mx-auto">This project was built with passion, for the community, by the community.</p>
+            <div class="mt-16 border-t border-slate-700 pt-8">
+                <p class="text-sm text-slate-400">&copy; 2025 CommunityHub | For the National TSA Conference 2026</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

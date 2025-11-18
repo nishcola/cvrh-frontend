@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories of Impact - CommunityHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom font application */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- 1. Unified Sticky, Glass-Morphism Navigation Bar -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-xl z-50 bg-white/70 backdrop-blur-lg shadow-md border border-black/5" @click.outside="mobileMenuOpen = false">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-900">CV Resource Hub</a>
+            <!-- Desktop Nav with "Reference" as active -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Home</a>
+                <a href="resources.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Resources</a>
+                <a href="stories.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Stories</a>
+                <a href="volunteer.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Get Involved</a>
+                <a href="submit.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Submit</a>
+                <a href="#" class="text-teal-500 font-bold transition-transform transform hover:-translate-y-0.5">Reference Page</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-2xl z-20">
+                <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden border-t border-gray-200" x-cloak>
+            <a href="index.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Home</a>
+            <a href="resources.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Resources</a>
+            <a href="stories.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Stories</a>
+            <a href="volunteer.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Get Involved</a>
+            <a href="submit.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Submit</a>
+            <a href="#" class="block py-3 px-6 text-lg font-bold bg-gray-100 text-teal-600">Reference Page</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="pt-36 pb-16 text-center bg-slate-50">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900">Stories of Impact</h1>
+                <p class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">Discover the incredible work, inspiring individuals, and positive change happening right here in our community.</p>
+            </div>
+        </header>
+        
+        <!-- 2. Blog-style Layout -->
+        <div class="container mx-auto px-6 py-24">
+            
+            <!-- Featured Story -->
+            <a href="#" class="group grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-24 hover:no-underline">
+                <div class="overflow-hidden rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200" alt="Group of happy volunteers" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div>
+                    <span class="text-sm font-bold text-teal-600">COMMUNITY REVITALIZATION</span>
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mt-2 transition-colors group-hover:text-teal-600">From Empty Lot to Vibrant Park: How One Neighborhood Came Together</h2>
+                    <p class="text-slate-600 mt-4 text-lg">An abandoned lot was more than just an eyesore; it was a lost opportunity. See how a group of determined residents, with help from local businesses, transformed a space of neglect into a thriving park that has become the heart of their community.</p>
+                    <span class="inline-block font-bold mt-6 text-slate-700">Read Full Story &rarr;</span>
+                </div>
+            </a>
+            
+            <!-- Story Grid -->
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Story Card 1 -->
+                 <a href="#" class="group block bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                     <div class="overflow-hidden rounded-t-xl">
+                         <img src="https://s7d2.scene7.com/is/image/TWCNews/flying-tassles-gettyjpg?wid=1250&hei=703&$wide-bg$" alt="Mentor helping student" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+                     </div>
+                     <div class="p-6">
+                         <span class="text-sm font-bold text-teal-600">YOUTH EMPOWERMENT</span>
+                         <h3 class="text-xl font-bold mt-2 text-slate-900">After-School Program Boosts Graduation Rates</h3>
+                         <p class="text-slate-600 mt-2">The Downtown Youth Center's mentorship program is pairing students with local professionals, leading to record-high graduation rates and brighter futures.</p>
+                         <p class="text-xs font-semibold text-slate-500 mt-4">Posted on November 10, 2025</p>
+                     </div>
+                 </a>
+                 
+                 <!-- Story Card 2 -->
+                 <a href="#" class="group block bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                     <div class="overflow-hidden rounded-t-xl">
+                         <img src="https://www.ssseva.org/wp-content/uploads/2021/03/healthwise-cover.jpg" alt="Seniors enjoying an activity" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+                     </div>
+                     <div class="p-6">
+                         <span class="text-sm font-bold text-teal-600">SENIOR CARE</span>
+                         <h3 class="text-xl font-bold mt-2 text-slate-900">Tech Pals: Bridging the Generational Gap</h3>
+                         <p class="text-slate-600 mt-2">A new initiative pairs tech-savvy high school students with senior citizens to teach them how to use modern technology to connect with loved ones.</p>
+                         <p class="text-xs font-semibold text-slate-500 mt-4">Posted on November 05, 2025</p>
+                     </div>
+                 </a>
+                 
+                 <!-- Story Card 3 -->
+                  <a href="#" class="group block bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                     <div class="overflow-hidden rounded-t-xl">
+                         <img src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/02-25/brunette+woman+petting+two+dogs+while+volunteering+at+an+animal+shelter-min.jpg" alt="Dog being adopted" class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+                     </div>
+                     <div class="p-6">
+                         <span class="text-sm font-bold text-teal-600">ANIMAL WELFARE</span>
+                         <h3 class="text-xl font-bold mt-2 text-slate-900">Local Shelter Celebrates Record Adoption Month</h3>
+                         <p class="text-slate-600 mt-2">Thanks to a successful community fundraiser and volunteer drive, the Anytown Animal Shelter found forever homes for over 50 animals in October.</p>
+                         <p class="text-xs font-semibold text-slate-500 mt-4">Posted on November 01, 2025</p>
+                     </div>
+                 </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Feeling Inspired?</h2>
+            <p class="text-slate-300 mb-8 max-w-xl mx-auto">You can be part of the next great story. Find an opportunity to volunteer and make your own impact.</p>
+            <a href="volunteer.html" class="inline-block bg-white text-teal-600 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 hover:scale-110 hover:shadow-xl">Get Involved Now</a>
+            <div class="mt-16 border-t border-slate-700 pt-8">
+                <p class="text-sm text-slate-400">&copy; 2025 CommunityHub | For the National TSA Conference 2026</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

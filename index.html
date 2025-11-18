@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommunityHub - Your Community, Connected</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom font application */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7FAFC] text-slate-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- 1. Unified Sticky, Glass-Morphism Navigation Bar -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-xl z-50 bg-white/70 backdrop-blur-lg shadow-md border border-black/5" @click.outside="mobileMenuOpen = false">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-900">CV Resource Hub</a>
+            <!-- Desktop Nav with "Reference" as active -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#" class="text-teal-500 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Home</a>
+                <a href="resources.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Resources</a>
+                <a href="stories.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Stories</a>
+                <a href="volunteer.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Get Involved</a>
+                <a href="submit.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Submit</a>
+                <a href="reference.html" class="text-slate-600 font-bold transition-transform transform hover:-translate-y-0.5">Reference Page</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-2xl z-20">
+                <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden border-t border-gray-200" x-cloak>
+            <a href="index.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Home</a>
+            <a href="resources.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Resources</a>
+            <a href="stories.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Stories</a>
+            <a href="volunteer.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Get Involved</a>
+            <a href="submit.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Submit</a>
+            <a href="#" class="block py-3 px-6 text-lg font-bold bg-gray-100 text-teal-600">Reference Page</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 2. Hero Section (with fully styled Buttons) -->
+        <section class="relative pt-36 pb-24 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-tight">Your Community, <span class="text-teal-500">Connected.</span></h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10">Find local non-profits, support services, and community programs to help you thrive.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 bg-teal-500 text-white hover:bg-teal-600">Explore Resources</a>
+                    <a href="#" class="font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 bg-slate-200 text-slate-800 hover:bg-slate-300">Read Our Stories</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spotlights Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-slate-900">Community Spotlights</h2>
+                    <p class="text-lg text-slate-600 mt-3">Highlighting organizations at the heart of our community.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                        <img src="https://www.bhg.com/thmb/qnODK9_j7rgzgd0tB_euSE1dOqI=/1244x0/filters:no_upscale():strip_icc()/food-pantry-shelves-8e01c831-2b2be0d3eade4b9e9ec3c7e7deb27027.jpg" alt="Food Pantry" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">The Local Food Pantry</h3>
+                            <p class="text-slate-600">Fighting hunger and building community through vital food distribution and education programs.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                        <img src="https://glumac.com/wp-content/uploads/2016/03/AshlandYouthCenterComplex_Lnd_150dpi_web-1.jpg" alt="Youth Center" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Downtown Youth Center</h3>
+                            <p class="text-slate-600">Providing a safe and engaging space for teenagers to learn, grow, and connect with their peers.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                        <img src="https://www.nursinghomeabusecenter.com/wp-content/uploads/2019/11/happy-seniors-nursing-home.png" alt="Senior Services" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Senior Support Services</h3>
+                            <p class="text-slate-600">Offering companionship, health resources, and essential assistance for our elderly residents.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-slate-900">What Our Community is Saying</h2>
+                    <p class="text-lg text-slate-600 mt-3">Real stories from the people we've helped connect.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8">
+                        <p class="text-slate-700 text-lg italic">"I didn't know where to turn for help with my heating bill. Within minutes, I found a local non-profit through CommunityHub that provided immediate assistance. It was a lifesaver."</p>
+                        <div class="mt-4 font-bold text-slate-900">- Sarah J., Community Member</div>
+                    </div>
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8">
+                        <p class="text-slate-700 text-lg italic">"As a new parent, finding childcare resources felt overwhelming. This hub organized everything in one place. We found a wonderful, affordable daycare program just down the street."</p>
+                        <div class="mt-4 font-bold text-slate-900">- Michael B., New Resident</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Board Section -->
+        <section class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold text-slate-900">Meet Our Team</h2>
+                    <p class="text-lg text-slate-600 mt-3">The dedicated volunteers leading this initiative.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                     <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&q=80&w=512&h=512" alt="Board Member 1" class="w-32 h-32 rounded-full mx-auto object-cover mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">James Carter</h3>
+                        <p class="text-slate-600">Executive Director</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://artbreeder.b-cdn.net/imgs/bde438be306361485fcc2d0e3555.jpeg" alt="Board Member 2" class="w-32 h-32 rounded-full mx-auto object-cover mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">Maria Garcia</h3>
+                        <p class="text-slate-600">Community Outreach</p>
+                    </div>
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?auto=format&fit=crop&q=80&w=512&h=512" alt="Board Member 3" class="w-32 h-32 rounded-full mx-auto object-cover mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">David Chen</h3>
+                        <p class="text-slate-600">Technology Lead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. Help Our Community Grow (CTA with fully styled Button) -->
+        <section class="py-24 text-center">
+            <div class="container mx-auto px-6">
+                 <h2 class="text-4xl font-extrabold text-slate-900">Help Our Community Grow</h2>
+                <p class="text-lg text-slate-600 my-4 max-w-2xl mx-auto">Know a resource that isn't listed? Share it with us and help connect more people.</p>
+                <a href="#" class="inline-block mt-4 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 bg-teal-500 text-white hover:bg-teal-600">Submit a New Resource</a>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer with Animated Button -->
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to find what you need?</h2>
+            <p class="text-slate-300 mb-8 max-w-xl mx-auto">Dive into our resource directory and get connected with your community today.</p>
+            <a href="#" class="inline-block bg-white text-teal-600 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 hover:scale-110 hover:shadow-xl">Explore All Resources</a>
+            <div class="mt-16 border-t border-slate-700 pt-8">
+                <p class="text-sm text-slate-400">&copy; 2025 CommunityHub | For the National TSA Conference 2026</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

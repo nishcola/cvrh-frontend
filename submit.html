@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a Resource - CommunityHub</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for Interactivity -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Custom font application */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7FAFC] text-slate-800" x-data="{ mobileMenuOpen: false }">
+
+    <!-- 1. Unified Sticky, Glass-Morphism Navigation Bar -->
+    <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl mx-auto rounded-xl z-50 bg-white/70 backdrop-blur-lg shadow-md border border-black/5" @click.outside="mobileMenuOpen = false">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-slate-900">CV Resource Hub</a>
+            <!-- Desktop Nav with "Reference" as active -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Home</a>
+                <a href="resources.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Resources</a>
+                <a href="stories.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Stories</a>
+                <a href="volunteer.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Get Involved</a>
+                <a href="submit.html" class="text-slate-600 font-bold hover:text-teal-500 transition-all transform hover:-translate-y-0.5">Submit</a>
+                <a href="#" class="text-teal-500 font-bold transition-transform transform hover:-translate-y-0.5">Reference Page</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-2xl z-20">
+                <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg x-show="mobileMenuOpen" x-cloak xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="md:hidden border-t border-gray-200" x-cloak>
+            <a href="index.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Home</a>
+            <a href="resources.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Resources</a>
+            <a href="stories.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Stories</a>
+            <a href="volunteer.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Get Involved</a>
+            <a href="submit.html" class="block py-3 px-6 text-lg hover:bg-gray-100">Submit</a>
+            <a href="#" class="block py-3 px-6 text-lg font-bold bg-gray-100 text-teal-600">Reference Page</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <header class="pt-36 pb-16 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900">Share a Resource</h1>
+                <p class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">Help our directory grow by sharing a resource you know and trust. Your submission makes our community stronger.</p>
+            </div>
+        </header>
+
+        <!-- 2. The Submit Form -->
+        <section class="container mx-auto px-6 pb-24">
+            <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-slate-200">
+                <form action="#" method="POST" class="space-y-8">
+                    
+                    <!-- Resource Name -->
+                    <div>
+                        <label for="resource-name" class="block text-sm font-bold text-gray-800 mb-2">Resource Name</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v1.5a1.5 1.5 0 01-3 0V4a1 1 0 011-1zM5.5 4.5a1.5 1.5 0 01-1.414-1.414 1 1 0 011.414-1.414A1.5 1.5 0 015.5 4.5zM1.672 8.5a1.5 1.5 0 010-3h16.656a1.5 1.5 0 010 3H1.672zM5.5 15.5a1.5 1.5 0 01-1.414-1.414 1 1 0 111.414-1.414A1.5 1.5 0 015.5 15.5zM14.5 4.5a1.5 1.5 0 01-1.414-1.414 1 1 0 111.414-1.414A1.5 1.5 0 0114.5 4.5zM1.672 13.5a1.5 1.5 0 010-3h16.656a1.5 1.5 0 010 3H1.672z" clip-rule="evenodd" /></svg></span>
+                            <input type="text" name="resource-name" id="resource-name" class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-teal-400 focus:border-teal-500 transition" placeholder="e.g., Anytown Community Food Bank">
+                        </div>
+                    </div>
+
+                    <!-- Resource Description -->
+                    <div>
+                        <label for="description" class="block text-sm font-bold text-gray-800 mb-2">Resource Description</label>
+                         <textarea name="description" id="description" rows="4" class="w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-teal-400 focus:border-teal-500 transition" placeholder="What does this resource do? Who does it serve?"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Location -->
+                        <div>
+                            <label for="location" class="block text-sm font-bold text-gray-800 mb-2">Location</label>
+                             <div class="relative">
+                                 <span class="absolute inset-y-0 left-0 flex items-center pl-3.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.223.654-.369a14.991 14.991 0 005.052-4.714C17.301 12.01 18 10.373 18 9a8 8 0 10-16 0c0 1.373.699 3.01 1.948 4.576A14.991 14.991 0 0010 18.933zM10 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd" /></svg></span>
+                                <input type="text" name="location" id="location" class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-teal-400 focus:border-teal-500 transition" placeholder="123 Main Street, Anytown">
+                            </div>
+                        </div>
+                        
+                        <!-- Date / Time -->
+                        <div>
+                            <label for="datetime" class="block text-sm font-bold text-gray-800 mb-2">Date & Time</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.75 2a.75.75 0 01.75.75V4h7V2.75a.75.75 0 011.5 0V4h.25A2.75 2.75 0 0118 6.75v8.5A2.75 2.75 0 0115.25 18H4.75A2.75 2.75 0 012 15.25v-8.5A2.75 2.75 0 014.75 4H5V2.75A.75.75 0 015.75 2zm-1 5.5c0-.414.336-.75.75-.75h10.5a.75.75 0 010 1.5H5.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" /></svg></span>
+                                <input type="datetime-local" name="datetime" id="datetime" class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-teal-400 focus:border-teal-500 transition text-gray-500">
+                            </div>
+                             <p class="text-xs text-gray-500 mt-1">Primarily for community events or fundraisers.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Category Dropdown -->
+                     <div>
+                        <label for="category" class="block text-sm font-bold text-gray-800 mb-2">Category</label>
+                        <select name="category" id="category" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-teal-400 focus:border-teal-500 transition bg-white">
+                            <option>Community Events</option>
+                            <option>Non-Profits</option>
+                            <option>Support Services</option>
+                            <option>Fundraisers</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <button type="submit" class="w-full flex items-center justify-center gap-2 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-1 bg-teal-500 text-white hover:bg-teal-600">
+                            Submit Resource for Review
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Your Contribution Matters</h2>
+            <p class="text-slate-300 mb-8 max-w-xl mx-auto">Every submission helps create a more connected and supportive community for everyone.</p>
+            <a href="resources.html" class="inline-block bg-white text-teal-600 font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 hover:scale-110 hover:shadow-xl">Back to Resources</a>
+            <div class="mt-16 border-t border-slate-700 pt-8">
+                <p class="text-sm text-slate-400">&copy; 2025 CommunityHub | For the National TSA Conference 2026</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
